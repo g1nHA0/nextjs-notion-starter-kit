@@ -1,17 +1,17 @@
 import * as React from 'react'
 
-import { FaEnvelopeOpenText } from '@react-icons/all-files/fa/FaEnvelopeOpenText'
-import { FaGithub } from '@react-icons/all-files/fa/FaGithub'
-import { FaLinkedin } from '@react-icons/all-files/fa/FaLinkedin'
-import { FaMastodon } from '@react-icons/all-files/fa/FaMastodon'
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
-import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
-import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
-import { IoMoonSharp } from '@react-icons/all-files/io5/IoMoonSharp'
-import { IoSunnyOutline } from '@react-icons/all-files/io5/IoSunnyOutline'
+import {FaEnvelopeOpenText} from '@react-icons/all-files/fa/FaEnvelopeOpenText'
+import {FaGithub} from '@react-icons/all-files/fa/FaGithub'
+import {FaLinkedin} from '@react-icons/all-files/fa/FaLinkedin'
+import {FaMastodon} from '@react-icons/all-files/fa/FaMastodon'
+import {FaTwitter} from '@react-icons/all-files/fa/FaTwitter'
+import {FaYoutube} from '@react-icons/all-files/fa/FaYoutube'
+import {FaZhihu} from '@react-icons/all-files/fa/FaZhihu'
+import {IoMoonSharp} from '@react-icons/all-files/io5/IoMoonSharp'
+import {IoSunnyOutline} from '@react-icons/all-files/io5/IoSunnyOutline'
 
 import * as config from '@/lib/config'
-import { useDarkMode } from '@/lib/use-dark-mode'
+import {useDarkMode} from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
 
@@ -19,7 +19,7 @@ import styles from './styles.module.css'
 
 export const FooterImpl: React.FC = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
-  const { isDarkMode, toggleDarkMode } = useDarkMode()
+  const {isDarkMode, toggleDarkMode} = useDarkMode()
 
   const onToggleDarkMode = React.useCallback(
     (e) => {
@@ -32,10 +32,10 @@ export const FooterImpl: React.FC = () => {
   React.useEffect(() => {
     setHasMounted(true)
   }, [])
-
+  const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>Copyright 2022 {config.author}</div>
+      <div className={styles.copyright}>Copyright {currentYear} {config.author}</div>
 
       <div className={styles.settings}>
         {hasMounted && (
@@ -46,7 +46,7 @@ export const FooterImpl: React.FC = () => {
             onClick={onToggleDarkMode}
             title='Toggle dark mode'
           >
-            {isDarkMode ? <IoMoonSharp /> : <IoSunnyOutline />}
+            {isDarkMode ? <IoMoonSharp/> : <IoSunnyOutline/>}
           </a>
         )}
       </div>
@@ -60,7 +60,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaTwitter />
+            <FaTwitter/>
           </a>
         )}
 
@@ -71,7 +71,7 @@ export const FooterImpl: React.FC = () => {
             title={`Mastodon ${config.getMastodonHandle()}`}
             rel='me'
           >
-            <FaMastodon />
+            <FaMastodon/>
           </a>
         )}
 
@@ -83,7 +83,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaZhihu />
+            <FaZhihu/>
           </a>
         )}
 
@@ -95,7 +95,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaGithub />
+            <FaGithub/>
           </a>
         )}
 
@@ -107,7 +107,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaLinkedin />
+            <FaLinkedin/>
           </a>
         )}
 
@@ -119,7 +119,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaEnvelopeOpenText />
+            <FaEnvelopeOpenText/>
           </a>
         )}
 
@@ -131,7 +131,7 @@ export const FooterImpl: React.FC = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <FaYoutube />
+            <FaYoutube/>
           </a>
         )}
       </div>
